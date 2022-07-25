@@ -30,13 +30,24 @@ class MyAppState extends State<MyApp> {
 
 // Scaffold Widget
   var scaffold = Scaffold(
-      appBar: AppBar(
-        title: const Text("Bar do Tião"),
-        backgroundColor: Colors.red,
-        leading: const OptionsButton(),
-        actions: const <Widget>[OrderButton()],
-      ),
-      body: Column());
+    appBar: AppBar(
+      title: const Text("Bar do Tião"),
+      backgroundColor: Colors.red,
+      leading: const OptionsButton(),
+      actions: const <Widget>[OrderButton()],
+    ),
+    body: GridView.count(
+        mainAxisSpacing: 7,
+        crossAxisSpacing: 5,
+        crossAxisCount: 3,
+        children: List.generate(100, (index) {
+          return Center(
+            child: Text(
+              'Item $index',
+            ),
+          );
+        })),
+  );
 }
 
 // OrderButton Widget
