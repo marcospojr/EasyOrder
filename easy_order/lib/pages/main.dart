@@ -37,16 +37,17 @@ class MyAppState extends State<MyApp> {
       actions: const <Widget>[OrderButton()],
     ),
     body: GridView.count(
-        mainAxisSpacing: 7,
-        crossAxisSpacing: 5,
-        crossAxisCount: 3,
-        children: List.generate(100, (index) {
-          return Center(
-            child: Text(
-              'Item $index',
-            ),
-          );
-        })),
+      mainAxisSpacing: 7,
+      crossAxisSpacing: 5,
+      crossAxisCount: 3,
+      children: List.generate(100, (index) {
+        return Center(
+          child: Text(
+            'Item $index',
+          ),
+        );
+      }),
+    ),
   );
 }
 
