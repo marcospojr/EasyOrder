@@ -1,6 +1,15 @@
 import 'package:flutter/material.dart';
+import 'utils/utils.dart';
+import 'pages/categoriespage.dart';
 
-void main() => runApp(MyApp());
+// void main() => runApp(MyApp());
+void main() {
+  runApp(MaterialApp(
+      debugShowCheckedModeBanner: false,
+      home: CategoriesPage(
+        category: Utils.getMockedCategories()[0],
+      )));
+}
 
 class MyApp extends StatefulWidget {
   @override
