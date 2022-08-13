@@ -2,8 +2,7 @@ import 'package:easy_order/models/category.dart';
 import 'package:flutter/material.dart';
 
 import 'package:flutter/material.dart';
-
-import '../widgets/categoryicon.dart';
+import '../main.dart';
 
 class CategoriesPage extends StatelessWidget {
   Category category;
@@ -14,23 +13,32 @@ class CategoriesPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: AppBar(),
-        body: Container(
-            child: Column(
+      appBar: AppBar(
+        title: const Text("Bar do Tião"),
+        backgroundColor: Colors.red,
+        leading: const OptionsButton(),
+        actions: const <Widget>[OrderButton()],
+      ),
+      body: Container(
+        child: Column(
           children: [
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                CategoryIcon(color: category.color, iconName: category.icon),
-                const SizedBox(width: 10),
-                Text(category.name ?? "",
-                    style: TextStyle(color: category.color, fontSize: 20))
+                Stack(children: <Widget>[
+                  Image.asset('assets/imgs/${category.imgName}',
+                      fit: BoxFit.cover),
+                  Center(
+                      child: Text(category.name ?? "",
+                          style:
+                              TextStyle(color: category.color, fontSize: 20))),
+                ])
               ],
             ),
             SizedBox(height: 30),
             Expanded(
               child: GridView.count(
-                crossAxisCount: 2,
+                crossAxisCount: 1,
                 children:
                     List.generate(category.subCategories?.length ?? 0, (index) {
                   return GestureDetector(
@@ -44,16 +52,13 @@ class CategoriesPage extends StatelessWidget {
                     //   ));
                     // },
                     child: Container(
-                        child: Column(
+                        child: Row(
                       children: [
-                        ClipOval(
-                          child: Image.asset(
-                              'assets/imgs/${category.subCategories![index].imgName}',
-                              fit: BoxFit.cover,
-                              width: 100,
-                              height: 100),
-                        ),
-                        SizedBox(height: 10),
+                        Image.asset(
+                            'assets/imgs/${category.subCategories![index].imgName}',
+                            fit: BoxFit.cover,
+                            width: 100,
+                            height: 100),
                         Text(
                             category.subCategories?[index].name ??
                                 "defaultName",
@@ -65,6 +70,8 @@ class CategoriesPage extends StatelessWidget {
               ),
             )
           ],
-        )));
+        ),
+      ),
+    );
   }
 }
