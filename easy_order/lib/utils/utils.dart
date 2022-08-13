@@ -2,6 +2,8 @@ import 'package:easy_order/models/category.dart';
 import 'package:easy_order/models/subcategory.dart';
 import 'package:flutter/material.dart';
 
+import 'iconfonthelper.dart';
+
 class Utils {
   static List<Category> getMockedCategories() {
     return [
@@ -9,7 +11,7 @@ class Utils {
           color: Colors.red,
           name: "Carnes",
           imgName: "cat1",
-          icon: "IconFontHelper.MEATS",
+          icon: IconFontHelper.MEATS,
           subCategories: [
             SubCategory(
               color: Colors.red,
