@@ -21,31 +21,31 @@ class Utils {
             ),
             SubCategory(
               name: "Vaca",
-              imgName: "cat1_2",
+              imgName: "cat1_1",
               icon: "IconFontHelper.MEATS",
               color: Colors.red,
             ),
             SubCategory(
               name: "Gallina",
-              imgName: "cat1_3",
+              imgName: "cat1_1",
               icon: "IconFontHelper.MEATS",
               color: Colors.red,
             ),
             SubCategory(
               name: "Pavo",
-              imgName: "cat1_4",
+              imgName: "cat1_1",
               icon: "IconFontHelper.MEATS",
               color: Colors.red,
             ),
             SubCategory(
               name: "Chivo",
-              imgName: "cat1_5",
+              imgName: "cat1_1",
               icon: "IconFontHelper.MEATS",
               color: Colors.red,
             ),
             SubCategory(
               name: "Conejo",
-              imgName: "cat1_6",
+              imgName: "cat1_1",
               icon: "IconFontHelper.MEATS",
               color: Colors.red,
             )

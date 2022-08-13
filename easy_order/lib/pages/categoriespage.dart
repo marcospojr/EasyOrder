@@ -46,18 +46,13 @@ class CategoriesPage extends StatelessWidget {
                     child: Container(
                         child: Column(
                       children: [
-                        // ClipOval(
-                        //   child: Image.asset(
-                        //       'assets/imgs/' +
-                        //           this
-                        //               .selectedCategory
-                        //               .subCategories[index]
-                        //               .imgName +
-                        //           '.png',
-                        //       fit: BoxFit.cover,
-                        //       width: 100,
-                        //       height: 100),
-                        // ),
+                        ClipOval(
+                          child: Image.asset(
+                              'assets/imgs/${category.subCategories![index].imgName}',
+                              fit: BoxFit.cover,
+                              width: 100,
+                              height: 100),
+                        ),
                         SizedBox(height: 10),
                         Text(
                             category.subCategories?[index].name ??
