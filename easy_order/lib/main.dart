@@ -1,6 +1,7 @@
+import 'package:easy_order/pages/bill_page.dart';
 import 'package:flutter/material.dart';
 import 'utils/utils.dart';
-import 'pages/categoriespage.dart';
+import 'pages/categories_page.dart';
 
 // void main() => runApp(MyApp());
 void main() {
@@ -74,8 +75,8 @@ class OrderButton extends StatelessWidget {
         color: Colors.white,
       ),
       onPressed: () {
-        // TODO: - implementar a ação do botão
-        // do something
+        Navigator.push(
+            context, MaterialPageRoute(builder: (context) => const BillPage()));
       },
     );
   }
@@ -94,10 +95,7 @@ class OptionsButton extends StatelessWidget {
         Icons.flatware,
         color: Colors.white,
       ),
-      onPressed: () {
-        // TODO: - implementar a ação do botão
-        // do something
-      },
+      onPressed: () {},
     );
   }
 }
