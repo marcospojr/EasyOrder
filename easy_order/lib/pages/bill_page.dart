@@ -52,10 +52,10 @@ class BillPage extends StatelessWidget {
                     size: 18,
                     color: Colors.red,
                   ),
-                  label: const Text("Teste"),
+                  label: const Text("Pagar"),
                   style: OutlinedButton.styleFrom(
                       side: const BorderSide(color: Colors.red),
-                      padding: EdgeInsets.symmetric(horizontal: 8),
+                      padding: const EdgeInsets.symmetric(horizontal: 8),
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(8),
                       ),
