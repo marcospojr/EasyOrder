@@ -43,7 +43,7 @@ class BillPage extends StatelessWidget {
               children: const [
                 Padding(
                   padding: EdgeInsets.symmetric(horizontal: 16),
-                  child: Text("Total: "),
+                  child: Text("Total: ", style: TextStyle(fontSize: 18)),
                 ),
                 Spacer(),
                 Padding(
@@ -62,27 +62,28 @@ class BillPage extends StatelessWidget {
           const SliverToBoxAdapter(
             child: SizedBox(height: 16),
           ),
-          SliverToBoxAdapter(
-            child: OutlinedButton.icon(
-              onPressed: () {
-                // Respond to button press
-              },
-              icon: const Icon(
-                Icons.add,
-                size: 18,
-                color: Colors.red,
-              ),
-              label: const Text("Pagar"),
-              style: OutlinedButton.styleFrom(
-                  side: const BorderSide(color: Colors.red),
-                  padding: const EdgeInsets.symmetric(horizontal: 8),
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(8),
-                  ),
-                  primary: Colors.red),
-            ),
-          ),
         ],
+      ),
+      bottomNavigationBar: Padding(
+        padding: const EdgeInsets.all(8),
+        child: OutlinedButton.icon(
+          onPressed: () {
+            // Respond to button press
+          },
+          icon: const Icon(
+            Icons.add,
+            size: 18,
+            color: Colors.red,
+          ),
+          label: const Text("Pagar"),
+          style: OutlinedButton.styleFrom(
+              side: const BorderSide(color: Colors.red),
+              padding: const EdgeInsets.symmetric(horizontal: 8),
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(8),
+              ),
+              primary: Colors.red),
+        ),
       ),
     );
   }
