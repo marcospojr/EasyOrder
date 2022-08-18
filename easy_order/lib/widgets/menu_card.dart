@@ -67,17 +67,43 @@ class MenuCard extends StatelessWidget {
                     color: Colors.black,
                   ),
                 ),
-                const Padding(
-                  padding: EdgeInsets.symmetric(vertical: 10),
-                  child: Text(
-                    "Shortbread, chocolate turtle cookies, and red velvet.",
-                    maxLines: 2,
-                    overflow: TextOverflow.ellipsis,
-                  ),
+                const SizedBox(height: 8),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    const Flexible(
+                      flex: 2,
+                      child: Text(
+                        "Dois deliciosos hamburguers com salada, queijo e nosso molho especial.",
+                      ),
+                    ),
+                    Flexible(
+                      flex: 1,
+                      child: OutlinedButton.icon(
+                        onPressed: () {
+                          // Respond to button press
+                        },
+                        icon: const Icon(
+                          Icons.add,
+                          size: 18,
+                          color: Colors.red,
+                        ),
+                        label: const Text("Add"),
+                        style: OutlinedButton.styleFrom(
+                            side: const BorderSide(color: Colors.red),
+                            padding: EdgeInsets.symmetric(horizontal: 8),
+                            shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(8),
+                            ),
+                            primary: Colors.red),
+                      ),
+                    ),
+                  ],
                 ),
+                const SizedBox(height: 8),
                 Row(
                   children: [
-                    const Text("\$\$"),
+                    const Text("R\$ 30,00"),
                     const Padding(
                       padding: EdgeInsets.symmetric(horizontal: 8),
                       child: CircleAvatar(
@@ -85,7 +111,6 @@ class MenuCard extends StatelessWidget {
                         backgroundColor: Colors.black38,
                       ),
                     ),
-                    const Text("Chinese"),
                     const Spacer(),
                     Text(
                       "USD$price",
