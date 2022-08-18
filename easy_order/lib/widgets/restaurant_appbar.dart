@@ -10,7 +10,7 @@ class RestaurantAppBar extends StatelessWidget {
   Widget build(BuildContext context) {
     return SliverAppBar(
       expandedHeight: 200,
-      backgroundColor: Colors.white,
+      backgroundColor: Colors.white.withOpacity(0),
       elevation: 0,
       pinned: true,
       flexibleSpace: FlexibleSpaceBar(
