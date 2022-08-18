@@ -52,35 +52,13 @@ class BillCard extends StatelessWidget {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Flexible(
-                      flex: 2,
-                      child: Text(
-                        title,
-                      ),
-                    ),
-                    const Flexible(
-                      flex: 1,
-                      child: Text("R\$ 30,00"),
-                    ),
-                  ],
-                ),
                 const SizedBox(height: 8),
                 Row(
                   children: [
-                    const Text("R\$ 30,00"),
-                    const Padding(
-                      padding: EdgeInsets.symmetric(horizontal: 8),
-                      child: CircleAvatar(
-                        radius: 2,
-                        backgroundColor: Colors.black38,
-                      ),
-                    ),
+                    Text(title),
                     const Spacer(),
                     Text(
-                      "USD$price",
+                      "R\$ $price",
                       style: const TextStyle(
                         fontWeight: FontWeight.w500,
                         color: Color(0xFF22A45D),

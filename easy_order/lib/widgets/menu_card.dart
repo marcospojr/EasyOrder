@@ -91,7 +91,7 @@ class MenuCard extends StatelessWidget {
                         label: const Text("Add"),
                         style: OutlinedButton.styleFrom(
                             side: const BorderSide(color: Colors.red),
-                            padding: EdgeInsets.symmetric(horizontal: 8),
+                            padding: const EdgeInsets.symmetric(horizontal: 8),
                             shape: RoundedRectangleBorder(
                               borderRadius: BorderRadius.circular(8),
                             ),
@@ -103,22 +103,14 @@ class MenuCard extends StatelessWidget {
                 const SizedBox(height: 8),
                 Row(
                   children: [
-                    const Text("R\$ 30,00"),
-                    const Padding(
-                      padding: EdgeInsets.symmetric(horizontal: 8),
-                      child: CircleAvatar(
-                        radius: 2,
-                        backgroundColor: Colors.black38,
-                      ),
-                    ),
-                    const Spacer(),
                     Text(
-                      "USD$price",
+                      "R\$ $price",
                       style: const TextStyle(
                         fontWeight: FontWeight.w500,
                         color: Color(0xFF22A45D),
                       ),
-                    )
+                    ),
+                    const Spacer(),
                   ],
                 )
               ],
