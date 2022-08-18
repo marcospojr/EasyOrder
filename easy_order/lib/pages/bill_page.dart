@@ -39,29 +39,47 @@ class BillPage extends StatelessWidget {
             ),
           ),
           SliverToBoxAdapter(
-            child: Padding(
-              padding: const EdgeInsets.all(8),
-              child: Flexible(
-                flex: 1,
-                child: OutlinedButton.icon(
-                  onPressed: () {
-                    // Respond to button press
-                  },
-                  icon: const Icon(
-                    Icons.add,
-                    size: 18,
-                    color: Colors.red,
-                  ),
-                  label: const Text("Pagar"),
-                  style: OutlinedButton.styleFrom(
-                      side: const BorderSide(color: Colors.red),
-                      padding: const EdgeInsets.symmetric(horizontal: 8),
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(8),
-                      ),
-                      primary: Colors.red),
+            child: Row(
+              children: const [
+                Padding(
+                  padding: EdgeInsets.symmetric(horizontal: 16),
+                  child: Text("Total: "),
                 ),
+                Spacer(),
+                Padding(
+                  padding: EdgeInsets.symmetric(horizontal: 16),
+                  child: Text(
+                    "R\$ 95,00",
+                    style: TextStyle(
+                      fontWeight: FontWeight.w500,
+                      color: Color(0xFF22A45D),
+                    ),
+                  ),
+                ),
+              ],
+            ),
+          ),
+          const SliverToBoxAdapter(
+            child: SizedBox(height: 16),
+          ),
+          SliverToBoxAdapter(
+            child: OutlinedButton.icon(
+              onPressed: () {
+                // Respond to button press
+              },
+              icon: const Icon(
+                Icons.add,
+                size: 18,
+                color: Colors.red,
               ),
+              label: const Text("Pagar"),
+              style: OutlinedButton.styleFrom(
+                  side: const BorderSide(color: Colors.red),
+                  padding: const EdgeInsets.symmetric(horizontal: 8),
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(8),
+                  ),
+                  primary: Colors.red),
             ),
           ),
         ],
