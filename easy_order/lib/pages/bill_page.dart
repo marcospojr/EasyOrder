@@ -1,6 +1,5 @@
-import 'package:easy_order/models/menu.dart';
-import 'package:easy_order/widgets/menu_card.dart';
-import 'package:easy_order/widgets/restaurant_appbar.dart';
+import 'package:easy_order/models/bill.dart';
+import 'package:easy_order/widgets/bill_card.dart';
 import 'package:flutter/material.dart';
 
 class BillPage extends StatelessWidget {
@@ -20,23 +19,48 @@ class BillPage extends StatelessWidget {
             sliver: SliverList(
               delegate: SliverChildBuilderDelegate(
                 (context, categoryIndex) {
-                  List<Menu> items = demoCategoryMenus[categoryIndex].items;
-                  return MenuCategoryItem(
-                    title: demoCategoryMenus[categoryIndex].category,
+                  List<Bill> items = demoCategoryBills[categoryIndex].items;
+                  return BillCategoryItem(
+                    title: demoCategoryBills[categoryIndex].category,
                     items: List.generate(
                       items.length,
                       (index) => Padding(
                         padding: const EdgeInsets.only(bottom: 16),
-                        child: MenuCard(
+                        child: BillCard(
                           title: items[index].title,
-                          image: items[index].image,
                           price: items[index].price,
                         ),
                       ),
                     ),
                   );
                 },
-                childCount: demoCategoryMenus.length,
+                childCount: demoCategoryBills.length,
+              ),
+            ),
+          ),
+          SliverToBoxAdapter(
+            child: Padding(
+              padding: const EdgeInsets.all(8),
+              child: Flexible(
+                flex: 1,
+                child: OutlinedButton.icon(
+                  onPressed: () {
+                    // Respond to button press
+                  },
+                  icon: const Icon(
+                    Icons.add,
+                    size: 18,
+                    color: Colors.red,
+                  ),
+                  label: const Text("Teste"),
+                  style: OutlinedButton.styleFrom(
+                      side: const BorderSide(color: Colors.red),
+                      padding: EdgeInsets.symmetric(horizontal: 8),
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(8),
+                      ),
+                      primary: Colors.red),
+                ),
               ),
             ),
           ),
