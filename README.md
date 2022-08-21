@@ -55,11 +55,11 @@ Este comando verifica seu ambiente e exibe um relatório do status de sua instal
 
 Por exemplo:
 
-`[-] Cadeia de ferramentas Android - desenvolver para dispositivos Android`
-`    • SDK do Android em D:\Android\sdk`
-`  ✗ Android SDK não possui ferramentas de linha de comando; baixe em https://goo.gl/XxQghQ`
-`    • Tente reinstalar ou atualizar seu Android SDK,`
-`      visite https://docs.flutter.dev/setup/#android-setup para obter instruções detalhadas.`
+`[-] Cadeia de ferramentas Android - desenvolver para dispositivos Android
+  - SDK do Android em D:\Android\sdk
+  - ✗ Android SDK não possui ferramentas de linha de comando; baixe em https://goo.gl/XxQghQ`
+  - Tente reinstalar ou atualizar seu Android SDK
+visite https://docs.flutter.dev/setup/#android-setup para obter instruções detalhadas.`
       
 As seções a seguir descrevem como executar essas tarefas e concluir o processo de configuração. Depois de instalar as dependências ausentes, você pode executar o flutter doctorcomando novamente para verificar se configurou tudo corretamente.
 
