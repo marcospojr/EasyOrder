@@ -45,9 +45,24 @@ Se você deseja executar comandos do Flutter no console normal do Windows, siga 
 
 Você precisa fechar e reabrir todas as janelas de console existentes para que essas alterações entrem em vigor.
 
+Executar `flutter doctor`
 
+Em uma janela de console que tenha o diretório Flutter no caminho (veja acima), execute o seguinte comando para ver se há alguma dependência de plataforma necessária para concluir a configuração:
 
+`C:\src\flutter>flutter doctor`
 
+Este comando verifica seu ambiente e exibe um relatório do status de sua instalação do Flutter. Verifique a saída com cuidado para outros softwares que você possa precisar instalar ou outras tarefas a serem executadas (mostradas em negrito ).
 
+Por exemplo:
+
+`[-] Cadeia de ferramentas Android - desenvolver para dispositivos Android
+    • SDK do Android em D:\Android\sdk
+    ✗ Android SDK não possui ferramentas de linha de comando; baixe em https://goo.gl/XxQghQ
+    • Tente reinstalar ou atualizar seu Android SDK,
+      visite https://docs.flutter.dev/setup/#android-setup para obter instruções detalhadas.`
+      
+As seções a seguir descrevem como executar essas tarefas e concluir o processo de configuração. Depois de instalar as dependências ausentes, você pode executar o flutter doctorcomando novamente para verificar se configurou tudo corretamente.
+
+Para instalações adicionais, consultar na documentação do próprio Flutter: `https://docs.flutter.dev/get-started/install/`
 
 Após instalado, entar via terminal na pasta onde foi baixado o App e executar o comando `flutter run`.
