@@ -68,7 +68,21 @@ class BillPage extends StatelessWidget {
         padding: const EdgeInsets.all(8),
         child: OutlinedButton.icon(
           onPressed: () {
-            // Respond to button press
+            showDialog(
+              context: context,
+              builder: (context) => AlertDialog(
+                title: const Text("Comanda"),
+                content: const Text("Comanda paga com sucesso!"),
+                actions: [
+                  TextButton(
+                      onPressed: () {
+                        Navigator.of(context).pop();
+                        Navigator.of(context).pop();
+                      },
+                      child: const Text("OK"))
+                ],
+              ),
+            );
           },
           icon: const Icon(
             Icons.add,
