@@ -63,3 +63,11 @@ As seções a seguir descrevem como executar essas tarefas e concluir o processo
 Para instalações adicionais, consultar na documentação do próprio Flutter: `https://docs.flutter.dev/get-started/install/`
 
 Após instalado, entar via terminal na pasta onde foi baixado o App e executar o comando `flutter run`.
+
+
+## Como utilizar o App
+
+- Ao escanear o QRCode e acessar o App, o usuário tem a possibilidade de navegar entre os produtos disponíveis na tela de cardápio e escolher os itens
+- Após isso, o usuário pode ir para a tela de comanda e visualizar os pedidos efetuados.
+- Além disso, pode também acompanhar o status de cada pedido na tela de comandos.
+- Ao verificar os status de cada pedido, o usuário pode efetuar o pagamento de um ou mais itens da comanda.
