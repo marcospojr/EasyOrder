@@ -19,32 +19,6 @@ class RestaurantAppBar extends StatelessWidget {
           fit: BoxFit.cover,
         ),
       ),
-      // leading: Padding(
-      //   padding: const EdgeInsets.only(left: 16),
-      //   child: CircleAvatar(
-      //     backgroundColor: Colors.white,
-      //     child: SvgPicture.asset('assets/icons/back.svg'),
-      //   ),
-      // ),
-      // actions: [
-      //   CircleAvatar(
-      //     backgroundColor: Colors.white,
-      //     child: SvgPicture.asset(
-      //       'assets/icons/share.svg',
-      //       color: Colors.black,
-      //     ),
-      //   ),
-      //   Padding(
-      //     padding: const EdgeInsets.symmetric(horizontal: 16),
-      //     child: CircleAvatar(
-      //       backgroundColor: Colors.white,
-      //       child: SvgPicture.asset(
-      //         'assets/icons/search.svg',
-      //         color: Colors.black,
-      //       ),
-      //     ),
-      //   ),
-      // ],
     );
   }
 }

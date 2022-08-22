@@ -1,3 +1,4 @@
+import 'package:easy_order/services/get_options.dart';
 import 'package:flutter/material.dart';
 
 class MenuCategoryItem extends StatelessWidget {
@@ -41,7 +42,7 @@ class MenuCard extends StatelessWidget {
   }) : super(key: key);
 
   final String image, title;
-  final double price;
+  final int price;
 
   @override
   Widget build(BuildContext context) {

@@ -36,6 +36,7 @@ dependencies:
   flutter_svg: ^1.1.3
   rxdart:
   dio:
+  http: ^0.13.5
 
 dev_dependencies:
   flutter_test:
