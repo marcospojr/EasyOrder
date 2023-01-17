@@ -2,10 +2,8 @@ import 'package:easy_order/services/get_options.dart';
 import 'package:easy_order/services/remote_service.dart';
 import 'package:flutter/material.dart';
 
-import '../models/menu.dart';
-
 class Categories extends StatefulWidget {
-  Categories({
+  const Categories({
     Key? key,
     required this.onChanged,
     required this.selectedIndex,

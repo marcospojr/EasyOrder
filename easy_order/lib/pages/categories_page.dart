@@ -1,6 +1,5 @@
 import 'package:easy_order/main.dart';
 import 'package:easy_order/models/category.dart';
-import 'package:easy_order/models/menu.dart';
 import 'package:easy_order/services/get_options.dart';
 import 'package:easy_order/services/remote_service.dart';
 import 'package:easy_order/widgets/menu_card.dart';
@@ -8,10 +7,11 @@ import 'package:easy_order/widgets/restaurant_appbar.dart';
 import 'package:easy_order/widgets/restaurant_categories.dart';
 import 'package:flutter/material.dart';
 
+// ignore: must_be_immutable
 class CategoriesPage extends StatefulWidget {
   Category category;
 
-  CategoriesPage({required this.category});
+  CategoriesPage({Key? key, required this.category}) : super(key: key);
 
   @override
   State<CategoriesPage> createState() => _CategoriesPageState();

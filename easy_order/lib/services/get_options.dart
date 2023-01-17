@@ -1,7 +1,3 @@
-// To parse this JSON data, do
-//
-//     final getOptions = getOptionsFromJson(jsonString);
-
 import 'dart:convert';
 
 GetOptions getOptionsFromJson(String str) =>
