@@ -1,9 +1,39 @@
 import 'package:easy_order/models/bill.dart';
+import 'package:easy_order/services/get_bill.dart';
+import 'package:easy_order/services/remote_service.dart';
 import 'package:easy_order/widgets/bill_card.dart';
 import 'package:flutter/material.dart';
 
-class BillPage extends StatelessWidget {
+class BillPage extends StatefulWidget {
   const BillPage({Key? key}) : super(key: key);
+
+  @override
+  State<BillPage> createState() => _BillPageState();
+}
+
+class _BillPageState extends State<BillPage> {
+  List<DataResult>? billInfo;
+
+  var isLoaded = false;
+  // int selectedIndex = 0;
+  late ScrollController _controller;
+  @override
+  void initState() {
+    _controller = ScrollController();
+    super.initState();
+    getData();
+  }
+
+  getData() async {
+    var aux = await RemoteService().getBill();
+    billInfo = aux?.dataResult;
+
+    if (billInfo != null) {
+      setState(() {
+        isLoaded = true;
+      });
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -19,16 +49,16 @@ class BillPage extends StatelessWidget {
             sliver: SliverList(
               delegate: SliverChildBuilderDelegate(
                 (context, categoryIndex) {
-                  List<Bill> items = demoCategoryBills[categoryIndex].items;
+                  List<DataResult>? items = billInfo;
                   return BillCategoryItem(
                     title: demoCategoryBills[categoryIndex].category,
                     items: List.generate(
-                      items.length,
+                      items?.length ?? 0,
                       (index) => Padding(
                         padding: const EdgeInsets.only(bottom: 16),
                         child: BillCard(
-                          title: items[index].title,
-                          price: items[index].price,
+                          title: items?[index].status ?? "STATUS",
+                          price: 0,
                         ),
                       ),
                     ),
