@@ -1,3 +1,4 @@
+import 'dart:convert';
 import 'package:easy_order/services/get_bill.dart';
 import 'package:easy_order/services/get_options.dart';
 import 'package:easy_order/services/post_bill.dart';
@@ -28,15 +29,15 @@ class RemoteService {
     }
   }
 
-  Future<PostBill?> postBill() async {
-    final response =
-        await http.get(Uri.parse('http://localhost:3000/order/create'));
-
-    if (response.statusCode == 200) {
-      final json = response.body;
-      return postBillFromJson(json);
-    } else {
-      throw Exception('Failed to load data from the Internet');
-    }
+  Future<http.Response> postBill() async {
+    return http.post(
+      Uri.parse('http://localhost:3000/order/insertProductsIntoOrder'),
+      headers: <String, String>{
+        'Content-Type': 'application/json; charset=UTF-8',
+      },
+      body: jsonEncode(<String, String>{
+        'title': "title",
+      }),
+    );
   }
 }

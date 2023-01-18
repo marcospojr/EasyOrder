@@ -1,4 +1,3 @@
-// TODO: Verificar como fazer o POST no flutter
 import 'dart:convert';
 
 PostBill postBillFromJson(String str) => PostBill.fromJson(json.decode(str));
