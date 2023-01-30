@@ -16,7 +16,7 @@ class CategoryBill {
 
 final List<CategoryBill> demoCategoryBills = [
   CategoryBill(
-    category: "Pedido 1 - Entregue",
+    category: "Pedido 1 - Em andamento",
     items: [
       Bill(
         price: 30.00,

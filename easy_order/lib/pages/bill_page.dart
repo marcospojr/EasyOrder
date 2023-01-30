@@ -64,7 +64,7 @@ class _BillPageState extends State<BillPage> {
                     ),
                   );
                 },
-                childCount: demoCategoryBills.length,
+                childCount: 1,
               ),
             ),
           ),

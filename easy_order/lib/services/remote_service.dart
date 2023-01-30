@@ -18,8 +18,8 @@ class RemoteService {
   }
 
   Future<GetBill?> getBill() async {
-    final response =
-        await http.get(Uri.parse('http://localhost:3000/order/all'));
+    final response = await http.get(Uri.parse(
+        'http://localhost:3000/order/getProductsByOrderId/fdfdc28e-d376-4179-a382-e60b14b4178f'));
 
     if (response.statusCode == 200) {
       final json = response.body;
