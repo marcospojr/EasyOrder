@@ -36,13 +36,14 @@ class MenuCategoryItem extends StatelessWidget {
 class MenuCard extends StatelessWidget {
   const MenuCard({
     Key? key,
+    required this.id,
     required this.image,
     required this.title,
     required this.description,
     required this.price,
   }) : super(key: key);
 
-  final String image, title, description;
+  final String id, image, title, description;
   final int price;
 
   @override
@@ -83,7 +84,7 @@ class MenuCard extends StatelessWidget {
                       flex: 1,
                       child: OutlinedButton.icon(
                         onPressed: () {
-                          // Respond to button press
+                          RemoteService().addProduct(id);
                         },
                         icon: const Icon(
                           Icons.add,

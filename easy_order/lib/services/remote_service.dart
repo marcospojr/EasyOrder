@@ -1,7 +1,6 @@
 import 'dart:convert';
 import 'package:easy_order/services/get_bill.dart';
 import 'package:easy_order/services/get_options.dart';
-import 'package:easy_order/services/post_bill.dart';
 import 'package:http/http.dart' as http;
 
 class RemoteService {
@@ -29,14 +28,17 @@ class RemoteService {
     }
   }
 
-  Future<http.Response> postBill() async {
+  Future<http.Response> addProduct(String productId) async {
     return http.post(
       Uri.parse('http://localhost:3000/order/insertProductsIntoOrder'),
       headers: <String, String>{
         'Content-Type': 'application/json; charset=UTF-8',
       },
-      body: jsonEncode(<String, String>{
-        'title': "title",
+      body: jsonEncode(<String, Object>{
+        "orderId": "fdfdc28e-d376-4179-a382-e60b14b4178f",
+        "products": [
+          {"productId": productId, "quantity": 1}
+        ]
       }),
     );
   }

@@ -75,7 +75,9 @@ class _CategoriesPageState extends State<CategoriesPage> {
                       (index) => Padding(
                         padding: const EdgeInsets.only(bottom: 16),
                         child: MenuCard(
-                          title: items?[index].name ?? "NAME",
+                          id: items?[index].id ??
+                              "047af12d-8ef2-4ac9-aeca-71580dde488c",
+                          title: items?[index].name ?? "Nome",
                           image: items?[index].imageUrl ?? imageMock,
                           price: items?[index].value ?? 0,
                           description: items?[index].description ?? "descrição",
