@@ -1,4 +1,4 @@
-import 'package:easy_order/services/get_options.dart';
+import 'package:easy_order/services/remote_service.dart';
 import 'package:flutter/material.dart';
 
 class MenuCategoryItem extends StatelessWidget {
@@ -38,10 +38,11 @@ class MenuCard extends StatelessWidget {
     Key? key,
     required this.image,
     required this.title,
+    required this.description,
     required this.price,
   }) : super(key: key);
 
-  final String image, title;
+  final String image, title, description;
   final int price;
 
   @override
@@ -51,7 +52,7 @@ class MenuCard extends StatelessWidget {
         SizedBox(
           width: 100,
           height: 100,
-          child: Image.asset(image),
+          child: Image.network(image),
         ),
         const SizedBox(width: 16),
         Expanded(
@@ -72,10 +73,10 @@ class MenuCard extends StatelessWidget {
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    const Flexible(
+                    Flexible(
                       flex: 2,
                       child: Text(
-                        "Dois deliciosos hamburguers com salada, queijo e nosso molho especial.",
+                        description,
                       ),
                     ),
                     Flexible(

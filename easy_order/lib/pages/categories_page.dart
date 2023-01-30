@@ -53,7 +53,7 @@ class _CategoriesPageState extends State<CategoriesPage> {
       ),
       body: CustomScrollView(
         slivers: [
-          RestaurantAppBar(),
+          const RestaurantAppBar(),
           SliverToBoxAdapter(
             child: Categories(
               onChanged: (value) {},
@@ -66,6 +66,8 @@ class _CategoriesPageState extends State<CategoriesPage> {
               delegate: SliverChildBuilderDelegate(
                 (context, categoryIndex) {
                   List<DataResult>? items = options;
+                  var imageMock =
+                      "https://images.freeimages.com/images/large-previews/925/beef-burger-over-white-1631759.jpg";
                   return MenuCategoryItem(
                     title: "Lanches",
                     items: List.generate(
@@ -74,8 +76,9 @@ class _CategoriesPageState extends State<CategoriesPage> {
                         padding: const EdgeInsets.only(bottom: 16),
                         child: MenuCard(
                           title: items?[index].name ?? "NAME",
-                          image: "assets/imgs/cat1_1.png",
+                          image: items?[index].imageUrl ?? imageMock,
                           price: items?[index].value ?? 0,
+                          description: items?[index].description ?? "descrição",
                         ),
                       ),
                     ),
