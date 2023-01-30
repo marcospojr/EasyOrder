@@ -107,7 +107,7 @@ class MenuCard extends StatelessWidget {
                 Row(
                   children: [
                     Text(
-                      "R\$ $price",
+                      "R\$ ${price.toStringAsFixed(2)}",
                       style: const TextStyle(
                         fontWeight: FontWeight.w500,
                         color: Color(0xFF22A45D),

@@ -58,7 +58,7 @@ class BillCard extends StatelessWidget {
                     Text(title),
                     const Spacer(),
                     Text(
-                      "R\$ $price",
+                      "R\$ ${price.toStringAsFixed(2)}",
                       style: const TextStyle(
                         fontWeight: FontWeight.w500,
                         color: Color(0xFF22A45D),

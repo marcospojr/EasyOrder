@@ -15,6 +15,7 @@ class _BillPageState extends State<BillPage> {
   List<DataResult>? billInfo;
 
   var isLoaded = false;
+  String totalAmount = "";
   // int selectedIndex = 0;
   late ScrollController _controller;
   @override
@@ -29,6 +30,7 @@ class _BillPageState extends State<BillPage> {
     billInfo = aux?.dataResult;
 
     if (billInfo != null) {
+      totalAmount = calculateTotal(billInfo!);
       setState(() {
         isLoaded = true;
       });
@@ -70,17 +72,17 @@ class _BillPageState extends State<BillPage> {
           ),
           SliverToBoxAdapter(
             child: Row(
-              children: const [
-                Padding(
+              children: [
+                const Padding(
                   padding: EdgeInsets.symmetric(horizontal: 16),
                   child: Text("Total: ", style: TextStyle(fontSize: 18)),
                 ),
-                Spacer(),
+                const Spacer(),
                 Padding(
-                  padding: EdgeInsets.symmetric(horizontal: 16),
+                  padding: const EdgeInsets.symmetric(horizontal: 16),
                   child: Text(
-                    "R\$ 95,00",
-                    style: TextStyle(
+                    "R\$ $totalAmount",
+                    style: const TextStyle(
                       fontWeight: FontWeight.w500,
                       color: Color(0xFF22A45D),
                     ),
@@ -130,5 +132,14 @@ class _BillPageState extends State<BillPage> {
         ),
       ),
     );
+  }
+
+  String calculateTotal(List<DataResult> items) {
+    var total = 0.0;
+    for (var item in items) {
+      total = total + item.value!;
+    }
+
+    return total.toStringAsFixed(2);
   }
 }
