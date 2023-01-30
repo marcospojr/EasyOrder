@@ -57,8 +57,8 @@ class _BillPageState extends State<BillPage> {
                       (index) => Padding(
                         padding: const EdgeInsets.only(bottom: 16),
                         child: BillCard(
-                          title: items?[index].status ?? "STATUS",
-                          price: 0,
+                          title: items?[index].name ?? "Lanche",
+                          price: items?[index].value ?? 0.0,
                         ),
                       ),
                     ),

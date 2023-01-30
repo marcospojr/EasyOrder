@@ -32,23 +32,43 @@ class GetBill {
 class DataResult {
   DataResult({
     this.id,
-    this.deviceId,
-    this.status,
+    this.name,
+    this.description,
+    this.value,
+    this.hasStock,
+    this.blocked,
+    this.imageUrl,
+    this.quantity,
   });
 
   String? id;
-  String? deviceId;
-  String? status;
+  String? name;
+  String? description;
+  double? value;
+  bool? hasStock;
+  bool? blocked;
+  String? imageUrl;
+  int? quantity;
 
   factory DataResult.fromJson(Map<String, dynamic> json) => DataResult(
         id: json["id"],
-        deviceId: json["name"],
-        status: json["description"],
+        name: json["name"],
+        description: json["description"],
+        value: json["value"],
+        hasStock: json["hasStock"],
+        blocked: json["blocked"],
+        imageUrl: json["imageUrl"],
+        quantity: json["quantity"],
       );
 
   Map<String, dynamic> toJson() => {
         "id": id,
-        "deviceId": deviceId,
-        "status": status,
+        "name": name,
+        "description": description,
+        "value": value,
+        "hasStock": hasStock,
+        "blocked": blocked,
+        "imageUrl": imageUrl,
+        "quantity": quantity,
       };
 }
